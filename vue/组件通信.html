@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    
+    <div id="fatherapp">
+        <h1>{{message}}</h1>
+    </div>
+
+    <div id="childApp">
+        
+
+    </div>
+
+
+
+    <script>
+        let fatherapp = new Vue({
+            el:"#fatherapp",
+            component:{},
+            data() {
+                return {
+                    message:'hello my son'
+                }
+            },
+            
+        })
+
+        let childapp = new Vue({
+            el:"#childApp",
+            data() {
+                return {
+                    
+                }
+            },
+
+        })
+
+
+    </script>
+
+
+</body>
+</html>

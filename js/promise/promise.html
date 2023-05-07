@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>抽奖</h1>
+        <button id="btc">抽他妈的</button>
+    </div>
+
+
+
+    <script>
+        let btc = document.getElementById("btc")
+
+        function rand(n, m) {
+            return Math.floor(Math.random() * (m - n + 1)) + n
+        }
+
+        btc.addEventListener("click", function () {
+            let p = new Promise(function (resolve, reject) {
+
+                setTimeout(() => {
+                    let x = rand(1, 100)
+
+                    if (x <= 1) {
+                        resolve(x)
+                    } else {
+                        reject(x)
+                    }
+                }, 1000)
+            })
+          let p2 =  p.then((value) => {
+                alert('中奖了' + value)
+            }, (reason) => {
+                alert('没中奖' + reason)
+            })
+            console.log(p);
+            console.log("--------------");
+            console.log(p2);
+        })
+
+    </script>
+</body>
+
+</html>

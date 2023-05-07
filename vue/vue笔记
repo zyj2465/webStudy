@@ -1,0 +1,11 @@
+虚拟dom
+
+
+MVVM模型：
+1.M:模型（model）：data中的数据
+2.v:视图（view):模板代码
+3.vm:视图模型（viewModel)：vue实例
+
+
+data上的所有属性最后都出现在vm身上
+vm身上所有的属性以及vue原型上所有的属性在vue模板中都可以直接使用

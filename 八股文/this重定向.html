@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    function fun(){
+        console.log(this)
+    }
+
+    function f2(a,b){
+        console.log(this)
+        console.log(a+b)
+    }
+
+    function f3(a,b){
+        console.log(this)
+        console.log(a+b)
+    }
+
+
+    let arr = new Array(1,2,3)
+    // arr.fun = function (){
+    //     console.log(this);
+    // }
+    // arr.fun()
+    fun.call(arr)
+    f2.apply(arr,[1,2])
+    f3.bind(arr,2,3)()
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

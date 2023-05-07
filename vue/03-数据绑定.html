@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        单向数据绑定：<input type="text" v-bind:value="name">
+        双向数据绑定：<input type="text" v-model:value="name">
+        <!-- 
+            v-model只能应用在表单类元素上
+            v-model只对表单类中的value值有用
+         -->
+         <!-- 
+            单向数据绑定：<input type="text" :value="name">    v-bind简介写法
+            双向数据绑定：<input type="text" v-model="name">   v-model简写写法：
+             
+        
+        -->
+    </div>
+
+<!-- 
+    数据绑定：
+    v-bind:单向数据绑定
+    v-model:
+ -->
+    <script>
+        const v = new Vue({
+            // el:'#root',
+            // data的第一种写法：对象式
+            // data:{
+            //     name:'郑一杰'
+            // }
+
+            // data的第二种写法：函数式
+                // 写成函数就必须要写正儿八经的函数，不能用箭头函数，箭头函数没有this，会指向windows
+                // 
+            // data:function(){
+            //     console.log(this)//此处的this是vue实例对象
+            //     return{
+            //         name:'郑一杰'
+            //     }
+            // }
+                // 函数式还有一种简易写法
+            data(){
+                console.log(this)//此处的this是vue实例对象
+                return{
+                    name:'郑一杰'
+                }
+            }
+
+        })
+        // el也有两种写法,一种直接在new中直接配置
+        //     另外一种创建vue实例之后通过   对象.$mount('容器名')
+        console.log(v)
+        // v.$mount('#root')
+
+
+        setTimeout(()=>{
+            v.$mount('#root')
+        },1000)
+    </script>
+<!-- 由vue所管理的函数一定不能写箭头函数 -->
+
+</body>
+</html>
